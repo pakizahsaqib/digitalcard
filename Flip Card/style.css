@@ -1,0 +1,129 @@
+:root {
+    --main-font: Verdana, Geneva, Tahoma, sans-serif;
+    --main-color: #312D86;
+    --box-shadow-color: rgba(49, 45, 134, 0.6);
+    --card-radius: 15px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--main-font);
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image: radial-gradient(#ffffff, #d5c0ff);
+    padding: 10px;
+}
+
+.card {
+    width: 350px;
+    height: 515px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.front, 
+.back {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--card-radius);
+    position: absolute;
+    backface-visibility: hidden;
+    padding: 60px 40px;
+}
+
+.front {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    background: #0B0A0A url(images/giphy.webp) no-repeat center 35% fixed;
+}
+
+.front > p {
+    margin: 10px 0 15px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.hover-btn {
+    width: 120px;
+    background: transparent;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 10px 16px;
+    border: 1px solid white;
+    color: white;
+    box-shadow: 0 4px 30px 10px var(--box-shadow-color);
+}
+
+.back {
+    background: #fff;
+    box-shadow: 0 4px 30px 3px var(--box-shadow-color);
+    backdrop-filter: blur;
+    color: #333;
+    transform: rotateY(180deg);
+    font-size: 14px;
+}
+
+.back > h2 {
+    margin: 20px;
+    color: var(--main-color);
+}
+
+.back > p > span {
+    font-weight: 600;
+}
+
+.back > img {
+    width: 100px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.col {
+    flex: 1;
+    font-size: 12px;
+}
+
+.col > h4 {
+    color: var(--main-color);
+}
+
+.col > h5 {
+    font-weight: 200;
+    margin: 10px;
+}
+
+.back .row a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px var(--box-shadow-color);
+    cursor: pointer;
+    color: var(--main-color);
+    font-size: 18px;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
